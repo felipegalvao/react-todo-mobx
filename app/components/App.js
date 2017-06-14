@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 
-const App = () => {
-  return <h1>App Component</h1>;
-};
+import TodoList from "./TodoList";
+
+class App extends Component {
+  render() {
+    const { todoStore } = this.props;
+
+    return (
+      <div>
+        <h1>App Component</h1>
+        <TodoList todoStore={todoStore} />
+      </div>
+    );
+  }
+}
 
 export default App;
