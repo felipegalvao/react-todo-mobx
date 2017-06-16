@@ -11,14 +11,15 @@ class AddTodo extends Component {
     };
   }
 
-  onTitleChange = (event) => {
+  onTitleChange = event => {
     this.setState({ title: event.target.value });
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.todoStore.addTodo(this.state.title);
-  }
+    this.setState({ title: "" });
+  };
 
   render() {
     return (
